@@ -1,0 +1,36 @@
+# eclipse specific git ignore t
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+target/**
+**/target/
+**/target/**
+config.properties
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# IntelliJ IDEA specific files
+*.iml
+*.idea/**
+.idea/
+
+# Files created as reports or processed
+bio_premie/src/main/webapp/WEB-INF/downloads/*
+bio_premie/src/main/webapp/resources/files/*
+
+# overlays
+/bio_premie/overlays/
+/fincorex_pcr/overlays/
+/fincorex_bpc/overlays/
