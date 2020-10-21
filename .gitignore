@@ -24,7 +24,7 @@ config.properties
 # IntelliJ IDEA specific files
 *.iml
 *.idea/**
-.idea/
+.idea
 
 # overlays
 /Foodstep/overlays/
