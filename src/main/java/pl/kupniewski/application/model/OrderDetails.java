@@ -1,2 +1,4 @@
-package pl.kupniewski.application.model.UserDto;public class OrderDetails {
+package pl.kupniewski.application.model;
+
+public class OrderDetails {
 }
