@@ -3,6 +3,7 @@ package pl.kupniewski.application.usecases.Customer;
 import lombok.AllArgsConstructor;
 import pl.kupniewski.application.dao.UserDao;
 import pl.kupniewski.application.domain.Order.Order;
+import pl.kupniewski.application.model.Menu;
 import pl.kupniewski.application.model.UserDto;
 
 import java.util.Optional;
