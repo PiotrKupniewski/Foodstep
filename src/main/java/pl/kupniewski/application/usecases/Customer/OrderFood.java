@@ -17,20 +17,14 @@ public class OrderFood {
 
 
 
-    public Long createNewOrderForUser(Long userId){
+    public Order createNewOrderForUser(Long userId, Menu menu){
 
         UserDto user = Optional.of(userDao.findUserById(userId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find user"));
 
-        Long orderId = orderService.createOrder(user.getUserId());
-
-        //transfer data to restaurant
-
         //transfer status from restaurant to deliverer
 
-
-
-        return orderId;
+        return new Order(menu, customer, restauran);
     }
 
 
