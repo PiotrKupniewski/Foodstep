@@ -6,11 +6,12 @@ import pl.kupniewski.application.model.UserDto;
 
 import java.util.Optional;
 
+@AllArgsContructor
 public class OrderFood {
 
 
-    private UserDao userDao;
-    private Order orderService;
+    private final UserDao userDao;
+    private final Order orderService;
 
 
 
