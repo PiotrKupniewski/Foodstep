@@ -12,15 +12,18 @@ import java.util.Optional;
 public class CreateOrderByCustomer {
 
     private final UserDao userDao;
+    private final RestaurantDao restaurantDao;
     private final OrderDto orderService;
 
-    public OrderDto createNewOrderForUser(Long userId, MenuDto menu) {
+    public OrderDto createNewOrderForUser(Long userId, Long restaurantId, MenuDto menu) {
 
-        UserDto user = Optional.of(userDao.findUserById(userId))
+        CustomerDto customer = (CustomerDto) Optional.of(userDao.findUserById(userId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find user"));
 
-        //transfer status from restaurant to deliverer
+        RestaurantDto restaurant = Optional.of(restaurantDao.findRestauranById(restaurantId))
+                .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
 
-        return null;
+
+        return new OrderDto(menu, customer, restaurant);
     }
 }
