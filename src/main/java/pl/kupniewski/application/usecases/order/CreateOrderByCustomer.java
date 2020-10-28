@@ -2,8 +2,9 @@ package pl.kupniewski.application.usecases.order;
 
 import lombok.AllArgsConstructor;
 import pl.kupniewski.application.authenticate.UserDao;
-import pl.kupniewski.application.usecases.rustleup.MenuDto;
-import pl.kupniewski.application.authenticate.UserDto;
+import pl.kupniewski.application.usecases.rustleup.model.MenuDto;
+import pl.kupniewski.application.usecases.rustleup.RestaurantDao;
+import pl.kupniewski.application.usecases.rustleup.model.RestaurantDto;
 
 import java.util.Optional;
 

@@ -1,10 +1,11 @@
 package pl.kupniewski.application.usecases.order;
 
 
-import lombok.AllArgsConstructor;
+import pl.kupniewski.application.authenticate.UserDto;
 
-@AllArgsConstructor
-public class CustomerDto {
+public class CustomerDto extends UserDto {
 
-
+    public CustomerDto(Long userId, String firstName, String lastName, String email, String phoneNumber) {
+        super(userId, firstName, lastName, email, phoneNumber);
+    }
 }
