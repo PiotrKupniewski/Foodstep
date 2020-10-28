@@ -1,4 +1,4 @@
-package pl.kupniewski.application.domain.Customer;
+package pl.kupniewski.application.usecases.order;
 
 
 import lombok.AllArgsConstructor;

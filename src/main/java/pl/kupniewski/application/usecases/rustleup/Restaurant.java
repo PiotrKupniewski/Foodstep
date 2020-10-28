@@ -1,4 +1,4 @@
-package pl.kupniewski.application.model;
+package pl.kupniewski.application.usecases.rustleup;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

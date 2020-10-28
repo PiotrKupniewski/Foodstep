@@ -1,7 +1,7 @@
-package pl.kupniewski.application.dao.impl;
+package pl.kupniewski.application.authenticate;
 
-import pl.kupniewski.application.dao.UserDao;
-import pl.kupniewski.application.model.UserDto;
+import pl.kupniewski.application.authenticate.UserDao;
+import pl.kupniewski.application.authenticate.UserDto;
 
 public class UserDaoImpl implements UserDao {
 
