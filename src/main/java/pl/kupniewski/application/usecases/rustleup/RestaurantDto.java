@@ -5,12 +5,12 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Restaurant {
+public class RestaurantDto {
 
     private Long id;
     private String name;
-    private RestaurantAddress adress;
-    private Menu menu;
+    private RestaurantAddressDto adress;
+    private MenuDto menu;
 
 
 }

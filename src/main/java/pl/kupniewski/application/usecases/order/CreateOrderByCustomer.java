@@ -2,18 +2,18 @@ package pl.kupniewski.application.usecases.order;
 
 import lombok.AllArgsConstructor;
 import pl.kupniewski.application.authenticate.UserDao;
-import pl.kupniewski.application.usecases.rustleup.Menu;
+import pl.kupniewski.application.usecases.rustleup.MenuDto;
 import pl.kupniewski.application.authenticate.UserDto;
 
 import java.util.Optional;
 
 @AllArgsConstructor
-public class CreateOrderByUser {
+public class CreateOrderByCustomer {
 
     private final UserDao userDao;
-    private final Order orderService;
+    private final OrderDto orderService;
 
-    public Order createNewOrderForUser(Long userId, Menu menu) {
+    public OrderDto createNewOrderForUser(Long userId, MenuDto menu) {
 
         UserDto user = Optional.of(userDao.findUserById(userId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find user"));

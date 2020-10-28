@@ -1,4 +1,4 @@
 package pl.kupniewski.application.usecases.rustleup;
 
-public class RestaurantAddress {
+public class RestaurantAddressDto {
 }
