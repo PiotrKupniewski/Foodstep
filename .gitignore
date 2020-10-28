@@ -1,0 +1,30 @@
+# eclipse specific git ignore t
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+target/**
+**/target/
+**/target/**
+config.properties
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# IntelliJ IDEA specific files
+*.iml
+*.idea/**
+.idea
+
+# overlays
+/Foodstep/overlays/
