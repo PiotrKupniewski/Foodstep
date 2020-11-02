@@ -13,17 +13,20 @@ public class CreateOrderByCustomer {
 
     private final UserDao userDao;
     private final RestaurantDao restaurantDao;
-    private final OrderDto orderService;
 
-    public OrderDto createNewOrderForUser(Long userId, Long restaurantId, MenuDto menu) {
+    public OrderDto createNewOrderForUser(Long customerId, Long restaurantId, List<Long> orderedPositions) {
 
-        CustomerDto customer = (CustomerDto) Optional.of(userDao.findUserById(userId))
+        Long newId = null;
+
+        CustomerDto customer = (CustomerDto) Optional.of(userDao.findUserById(customerId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find user"));
 
         RestaurantDto restaurant = Optional.of(restaurantDao.findRestauranById(restaurantId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
 
+        MenuDto menu = Optional.of(restaurantDao.findPositionsById(orderedPositions))
+                .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
 
-        return new OrderDto(menu, customer, restaurant);
+        return new OrderDto(newId, menu, customer, restaurant);
     }
 }
