@@ -1,6 +1,6 @@
 package pl.kupniewski.application.usecases.rustleup;
 
-import pl.kupniewski.application.usecases.order.OrderDto;
+import pl.kupniewski.application.usecases.order.model.OrderDto;
 
 public class ProcessCustomerOrder {
 

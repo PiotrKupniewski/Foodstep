@@ -1,4 +1,4 @@
-package pl.kupniewski.application.usecases.order;
+package pl.kupniewski.application.usecases.order.model;
 
 
 import pl.kupniewski.application.authenticate.UserDto;
