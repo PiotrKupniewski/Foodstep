@@ -17,24 +17,22 @@ public class CreateOrderByCustomer {
 
     private final UserDao userDao;
     private final RestaurantDao restaurantDao;
-    private final ProcessCustomerOrder processCustomerOrder;
+    private final ProcessCustomerOrderToRestaurant processCustomerOrder;
+    private final OrderDao orderDao;
 
     public OrderDto createNewOrderForUser(Long customerId, Long restaurantId, List<Long> items) {
+        validateParameters(customerId, restaurantId, items);
+        return processCustomerOrder.assignOrder(orderDao.createNewOrder(customerId, restaurantId, items));
+    }
 
-        Long newId = null;
-
-        CustomerDto customer = (CustomerDto) Optional.of(userDao.findUserById(customerId))
+    private void validateParameters(Long customerId, Long restaurantId, List<Long> items) {
+        Optional.of(userDao.findUserById(customerId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find user"));
 
-        RestaurantDto restaurant = Optional.of(restaurantDao.findRestauranById(restaurantId))
+        Optional.of(restaurantDao.findRestauranById(restaurantId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
 
-        processCustomerOrder.assignCustomerOrderToRestaurant();
-
-
-        MenuDto menu = Optional.of(restaurantDao.findPositionsById(items))
-                .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
-
-        return new OrderDto(newId, menu, customer, restaurant);
+        Optional.of(restaurantDao.findItemsInRestaurantMenu(restaurantId, items))
+                .orElseThrow(() -> new UnsupportedOperationException("Cannot find ordered items in restaurant menu"));
     }
 }
