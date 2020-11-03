@@ -51,7 +51,7 @@ class CreateOrderByCustomerTest {
 
         Mockito.when(useDao.findUserById(1L)).thenReturn(cust);
         Mockito.when(restaurantDao.findRestauranById(2L)).thenReturn(new RestaurantDto(2L, "U piotrka", restaurantAddress, menu));
-        Mockito.when(createOrderByCustomer.createNewOrderForUser(1L, 2L, orderedPositions)).thenReturn(new OrderDto(1L, menu, cust, r));
+        Mockito.when(createOrderByCustomer.createNewOrderForUser(1L, 2L, orderedPositions)).thenReturn(new OrderDto(1L, menu, cust, r, OrderDto.OrderStatus.IN_PROGRESS));
         Long orderId = createOrderByCustomer.createNewOrderForUser(1L, 2L, orderedPositions).getOrderId();
         assertEquals(orderId, 1L);
 
