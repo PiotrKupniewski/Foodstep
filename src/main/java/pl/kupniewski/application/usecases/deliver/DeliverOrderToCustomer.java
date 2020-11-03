@@ -6,7 +6,8 @@ public class DeliverOrderToCustomer {
     public OrderDto deliverOrderToCustomer() {
         throw new UnsupportedOperationException("Not implemented yet!");
     }
-    public OrderDto assignOrderToDeliverer() {
+
+    public OrderDto assignOrderToDeliverer(OrderDto order) {
         throw new UnsupportedOperationException("Not implemented yet!");
     }
 }
