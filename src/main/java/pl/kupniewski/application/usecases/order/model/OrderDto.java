@@ -9,6 +9,10 @@ import pl.kupniewski.application.usecases.rustleup.model.RestaurantDto;
 @AllArgsConstructor
 public class OrderDto {
 
+    public enum OrderStatus{
+        IN_PROGRESS,REALIZED;
+    }
+
     private Long orderId;
     private MenuDto menu;
     private CustomerDto customer;

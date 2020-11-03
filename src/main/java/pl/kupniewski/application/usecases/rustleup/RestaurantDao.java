@@ -8,5 +8,6 @@ import java.util.List;
 public interface RestaurantDao {
 
     RestaurantDto findRestauranById(Long restaurantId);
+
     MenuDto findPositionsById(List<Long> orderedPositions);
 }
