@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-image: url("static/img/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
