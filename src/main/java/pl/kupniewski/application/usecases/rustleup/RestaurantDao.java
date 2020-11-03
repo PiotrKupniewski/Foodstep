@@ -9,5 +9,5 @@ public interface RestaurantDao {
 
     RestaurantDto findRestauranById(Long restaurantId);
 
-    MenuDto findPositionsById(List<Long> orderedPositions);
+    MenuDto findItemsInRestaurantMenu(Long restaurantId, List<Long> orderedPositions);
 }
