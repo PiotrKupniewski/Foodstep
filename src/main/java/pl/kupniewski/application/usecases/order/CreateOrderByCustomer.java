@@ -16,8 +16,9 @@ public class CreateOrderByCustomer {
 
     private final UserDao userDao;
     private final RestaurantDao restaurantDao;
+    private final ProcessCustomerOrder processCustomerOrder;
 
-    public OrderDto createNewOrderForUser(Long customerId, Long restaurantId, List<Long> orderedPositions) {
+    public OrderDto createNewOrderForUser(Long customerId, Long restaurantId, List<Long> items) {
 
         Long newId = null;
 
@@ -27,7 +28,10 @@ public class CreateOrderByCustomer {
         RestaurantDto restaurant = Optional.of(restaurantDao.findRestauranById(restaurantId))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
 
-        MenuDto menu = Optional.of(restaurantDao.findPositionsById(orderedPositions))
+        processCustomerOrder.assignCustomerOrderToRestaurant();
+
+
+        MenuDto menu = Optional.of(restaurantDao.findPositionsById(items))
                 .orElseThrow(() -> new UnsupportedOperationException("Cannot find restaurant"));
 
         return new OrderDto(newId, menu, customer, restaurant);
