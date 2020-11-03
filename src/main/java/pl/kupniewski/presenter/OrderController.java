@@ -1,14 +1,25 @@
 package pl.kupniewski.presenter;
 
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import pl.kupniewski.application.usecases.order.CreateOrderByCustomer;
+import pl.kupniewski.application.usecases.order.model.OrderDto;
 
-@RestController
+import java.util.Arrays;
+
+@Controller
 public class OrderController {
-    @GetMapping("/orderFood")
-    public String greeting(String name, Model model) {
-        return "order";
+
+    private CreateOrderByCustomer createOrderByCustomer;
+
+    @GetMapping("/customer")
+    public String greeting() {
+        return "customer.html";
     }
+
+    @GetMapping("/customer/order")
+    public OrderDto orderFood() {
+        return createOrderByCustomer.createNewOrderForUser(1L, 2L, Arrays.asList(5L, 2L));
+    }
+
 }
