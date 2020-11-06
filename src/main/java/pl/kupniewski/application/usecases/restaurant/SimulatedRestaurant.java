@@ -1,7 +1,7 @@
 package pl.kupniewski.application.usecases.restaurant;
 
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.usecases.order.PreparedOrder;
+import pl.kupniewski.application.usecases.order.model.PreparedOrder;
 import pl.kupniewski.application.usecases.order.model.Order;
 
 @Component

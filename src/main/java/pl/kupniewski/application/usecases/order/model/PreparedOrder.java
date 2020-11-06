@@ -1,4 +1,4 @@
-package pl.kupniewski.application.usecases.order;
+package pl.kupniewski.application.usecases.order.model;
 
 public class PreparedOrder {
 }
