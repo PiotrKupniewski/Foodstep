@@ -5,7 +5,7 @@ import pl.kupniewski.application.usecases.order.model.Order;
 
 public interface Restaurant {
 
-    Order assignOrder(Order order);
+    PreparedOrder assignOrder(Order order);
 
     PreparedOrder realizeOrder(Order order);
 }

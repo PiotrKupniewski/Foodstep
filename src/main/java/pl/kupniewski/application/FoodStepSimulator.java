@@ -15,19 +15,13 @@ import pl.kupniewski.application.usecases.restaurant.SimulatedRestaurant;
 @ComponentScan(basePackages = "pl.kupniewski")
 public class FoodStepSimulator {
 
-    CreateOrderByCustomer customer;
-    DeliverOrderToCustomer deliverer;
-    SimulatedRestaurant restaurant;
-
-
     public static void main(String[] args) {
         SpringApplication.run(FoodStepSimulator.class, args);
 
-        FoodStepSimulator appSimulator = new FoodStepSimulator(new CreateOrderByCustomer(), new DeliverOrderToCustomer(), new SimulatedRestaurant());
-        Order order = appSimulator.customer.createNewOrderForCustomer();
+        //FoodStepSimulator appSimulator = new FoodStepSimulator(new CreateOrderByCustomer(), new DeliverOrderToCustomer(), new SimulatedRestaurant());
+        /*Order order = appSimulator.customer.createNewOrderForCustomer();
         order = appSimulator.restaurant.assignOrder(order);
         PreparedOrder preparedOrder = appSimulator.restaurant.realizeOrder(order);
-        appSimulator.deliverer.deliverOrderToCustomer(preparedOrder);
+        appSimulator.deliverer.deliverOrderToCustomer(preparedOrder);*/
     }
-
 }

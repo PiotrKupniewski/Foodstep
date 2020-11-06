@@ -7,6 +7,7 @@ import pl.kupniewski.application.usecases.order.model.PreparedOrder;
 public class DeliverOrderToCustomer {
     public PreparedOrder deliverOrderToCustomer(PreparedOrder preparedOrder) {
         System.out.println("Order was delivered");
+        preparedOrder.setStatus(" Order has bedd delivered");
         return preparedOrder;
     }
 }
