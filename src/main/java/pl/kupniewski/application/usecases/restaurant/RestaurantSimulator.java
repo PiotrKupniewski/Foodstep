@@ -6,13 +6,13 @@ import pl.kupniewski.application.usecases.order.model.CompletedOrder;
 import pl.kupniewski.application.usecases.order.model.Order;
 
 @Component
-public class SimulatedRestaurant implements Restaurant {
+public class RestaurantSimulator implements Restaurant {
 
     DeliverOrderToCustomer deliverer;
 
     @Override
-    public CompletedOrder assignOrder(Order order) {
-        return realizeOrder(order);
+    public Order assignOrder(Order order) {
+        return order;
     }
 
     @Override
