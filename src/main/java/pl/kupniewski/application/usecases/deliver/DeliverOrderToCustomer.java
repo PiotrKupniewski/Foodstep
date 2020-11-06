@@ -1,13 +1,13 @@
 package pl.kupniewski.application.usecases.deliver;
 
-import pl.kupniewski.application.usecases.order.model.OrderDto;
+import org.springframework.stereotype.Component;
+import pl.kupniewski.application.usecases.order.PreparedOrder;
+import pl.kupniewski.application.usecases.order.model.Order;
 
+@Component
 public class DeliverOrderToCustomer {
-    public OrderDto deliverOrderToCustomer() {
-        throw new UnsupportedOperationException("Not implemented yet!");
-    }
-
-    public OrderDto assignOrderToDeliverer(OrderDto order) {
-        throw new UnsupportedOperationException("Not implemented yet!");
+    public PreparedOrder deliverOrderToCustomer(PreparedOrder preparedOrder) {
+        System.out.println("Order was delivered");
+        return preparedOrder;
     }
 }

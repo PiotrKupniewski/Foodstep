@@ -1,9 +1,9 @@
 package pl.kupniewski.application.usecases.deliver;
 
-import pl.kupniewski.application.usecases.order.model.OrderDto;
+import pl.kupniewski.application.usecases.order.model.Order;
 
 public class TakeAnOrderFromRestauran {
-    public OrderDto takeAnOrderFromRestaurant() {
+    public Order takeAnOrderFromRestaurant() {
         throw new UnsupportedOperationException("Not implemented yet!");
     }
 }
