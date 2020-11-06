@@ -14,7 +14,6 @@ public class CreateOrderByCustomer {
 
     public CompletedOrder createNewOrderForCustomer() {
         Order order = new Order();
-        restaurant.assignOrder(order);
-        return restaurant.realizeOrder(order);
+        return restaurant.completeTheOrder(order);
     }
 }

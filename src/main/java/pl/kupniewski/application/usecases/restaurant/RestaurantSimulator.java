@@ -11,12 +11,7 @@ public class RestaurantSimulator implements Restaurant {
     DeliverOrderToCustomer deliverer;
 
     @Override
-    public Order assignOrder(Order order) {
-        return order;
-    }
-
-    @Override
-    public CompletedOrder realizeOrder(Order order) {
-        return deliverer.deliverOrderToCustomer(new CompletedOrder("In progress"));
+    public CompletedOrder completeTheOrder(Order order) {
+        return deliverer.deliverOrderToCustomer(new CompletedOrder("Send to deliverer"));
     }
 }

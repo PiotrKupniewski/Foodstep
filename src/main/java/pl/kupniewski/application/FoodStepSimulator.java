@@ -13,6 +13,7 @@ public class FoodStepSimulator {
     public static void main(String[] args) {
         SpringApplication.run(FoodStepSimulator.class, args);
 
+        // short desc of logic if there was no spring support
         //FoodStepSimulator appSimulator = new FoodStepSimulator(new CreateOrderByCustomer(), new DeliverOrderToCustomer(), new SimulatedRestaurant());
         /*Order order = appSimulator.customer.createNewOrderForCustomer();
         order = appSimulator.restaurant.assignOrder(order);
