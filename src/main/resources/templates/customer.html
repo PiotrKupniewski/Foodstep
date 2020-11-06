@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Order</title>
-    <link rel="stylesheet" href=".././static/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" data-th-href="@{/css/main.css}">
 </head>
 <body>
     <main>
-        <h1>Click here to order food</h1>
-        <button>Order</button>
+        <div class="wrapper">
+            <h1>Click here to order food</h1>
+            <button id="orderButton">Order</button>
+            <span id="statusSpan">Status: </span>
+        </div>
     </main>
+<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

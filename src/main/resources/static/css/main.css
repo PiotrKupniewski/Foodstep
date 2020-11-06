@@ -4,9 +4,55 @@ body{
     box-sizing: border-box;
 }
 
-main{
-    background-image: url("static/img/background.jpg");
-    background-position: center;
-    background-size: cover;
+main h1{
+    margin:0;
+    font-size: 48px;
+    font-family: "Roboto Light";
 }
 
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+main::after{
+    content: "";
+    background-image: url("/img/background.jpg");
+    opacity: 0.6;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+img{
+    opacity: 0.6;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#orderButton{
+    margin: 20px 0;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.wrapper span {
+    ont-size: 30px;
+    font-family: "Roboto Light";
+    font-weight: 700;
+}
