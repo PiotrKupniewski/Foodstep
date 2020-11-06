@@ -17,8 +17,9 @@ public class OrderController {
     }
 
     @GetMapping("/customer/order")
-    public Order orderFood() {
-        return createOrderByCustomer.createNewOrderForCustomer();
+    public ResponseEntity<PreparedOrder> orderFood() {
+        PreparedOrder newOrderForCustomer = createOrderByCustomer.createNewOrderForCustomer();
+        return new ResponseEntity<PreparedOrder>(newOrderForCustomer, HttpStatus.OK);
     }
 
 }
