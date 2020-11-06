@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.kupniewski.application.usecases.order.CreateOrderByCustomer;
-import pl.kupniewski.application.usecases.order.model.PreparedOrder;
+import pl.kupniewski.application.usecases.order.model.CompletedOrder;
 
 
 @Controller

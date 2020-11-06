@@ -4,11 +4,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import pl.kupniewski.application.usecases.deliver.DeliverOrderToCustomer;
-import pl.kupniewski.application.usecases.order.CreateOrderByCustomer;
-import pl.kupniewski.application.usecases.order.model.PreparedOrder;
-import pl.kupniewski.application.usecases.order.model.Order;
-import pl.kupniewski.application.usecases.restaurant.SimulatedRestaurant;
 
 @SpringBootApplication
 @AllArgsConstructor
