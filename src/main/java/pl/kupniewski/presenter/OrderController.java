@@ -1,9 +1,11 @@
 package pl.kupniewski.presenter;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.kupniewski.application.usecases.order.CreateOrderByCustomer;
-import pl.kupniewski.application.usecases.order.model.Order;
+import pl.kupniewski.application.usecases.order.model.PreparedOrder;
 
 
 @Controller
