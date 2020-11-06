@@ -1,11 +1,11 @@
 package pl.kupniewski.application.usecases.restaurant;
 
-import pl.kupniewski.application.usecases.order.model.PreparedOrder;
+import pl.kupniewski.application.usecases.order.model.CompletedOrder;
 import pl.kupniewski.application.usecases.order.model.Order;
 
 public interface Restaurant {
 
-    PreparedOrder assignOrder(Order order);
+    Order assignOrder(Order order);
 
-    PreparedOrder realizeOrder(Order order);
+    CompletedOrder realizeOrder(Order order);
 }
