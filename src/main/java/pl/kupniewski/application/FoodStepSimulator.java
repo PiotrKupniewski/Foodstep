@@ -21,7 +21,7 @@ public class FoodStepSimulator {
         //FoodStepSimulator appSimulator = new FoodStepSimulator(new CreateOrderByCustomer(), new DeliverOrderToCustomer(), new SimulatedRestaurant());
         /*Order order = appSimulator.customer.createNewOrderForCustomer();
         order = appSimulator.restaurant.assignOrder(order);
-        PreparedOrder preparedOrder = appSimulator.restaurant.realizeOrder(order);
-        appSimulator.deliverer.deliverOrderToCustomer(preparedOrder);*/
+        CompletedOrder completedOrder = appSimulator.restaurant.realizeOrder(order);
+        appSimulator.deliverer.deliverOrderToCustomer(completedOrder);*/
     }
 }

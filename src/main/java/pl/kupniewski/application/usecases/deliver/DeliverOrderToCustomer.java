@@ -1,13 +1,13 @@
 package pl.kupniewski.application.usecases.deliver;
 
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.usecases.order.model.PreparedOrder;
+import pl.kupniewski.application.usecases.order.model.CompletedOrder;
 
 @Component
 public class DeliverOrderToCustomer {
-    public PreparedOrder deliverOrderToCustomer(PreparedOrder preparedOrder) {
+    public CompletedOrder deliverOrderToCustomer(CompletedOrder completedOrder) {
         System.out.println("Order was delivered");
-        preparedOrder.setStatus(" Order has bedd delivered");
-        return preparedOrder;
+        completedOrder.setStatus(" Order has bedd delivered");
+        return completedOrder;
     }
 }
