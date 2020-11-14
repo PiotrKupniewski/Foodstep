@@ -11,6 +11,6 @@ public class RestaurantSimulator {
     CompleteOrderByRestaurant restaurantApi;
 
     public OrderReadyToDeliver completeTheOrder (Order order) {
-        return restaurantApi.completeTheOrder(order);
+        return restaurantApi.assignOrderToDeliverer(order);
     }
 }

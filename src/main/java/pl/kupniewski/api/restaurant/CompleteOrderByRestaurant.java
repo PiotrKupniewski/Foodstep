@@ -8,7 +8,7 @@ public class CompleteOrderByRestaurant {
 
     DeliverOrderToCustomer deliverer;
 
-    public OrderReadyToDeliver completeTheOrder (Order order) {
+    public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
         return deliverer.deliverOrderToCustomer(new OrderReadyToDeliver("Send to deliverer", order));
     }
 
