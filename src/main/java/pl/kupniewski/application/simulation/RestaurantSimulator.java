@@ -6,11 +6,10 @@ import pl.kupniewski.application.usecases.deliver.OrderReadyToDeliver;
 import pl.kupniewski.application.usecases.order.Order;
 
 @Component
-public class RestaurantSimulator implements Restaurant {
+public class RestaurantSimulator {
 
     DeliverOrderToCustomer deliverer;
 
-    @Override
     public OrderReadyToDeliver completeTheOrder (Order order) {
         return deliverer.deliverOrderToCustomer(new OrderReadyToDeliver("Send to deliverer"));
     }
