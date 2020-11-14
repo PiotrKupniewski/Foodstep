@@ -2,18 +2,17 @@ package pl.kupniewski.application.usecases.order;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.usecases.order.model.Order;
-import pl.kupniewski.application.usecases.order.model.CompletedOrder;
-import pl.kupniewski.application.usecases.restaurant.RestaurantSimulator;
+import pl.kupniewski.application.usecases.deliver.OrderReadyToDeliver;
+import pl.kupniewski.application.simulation.Restaurant;
 
 @AllArgsConstructor
 @Component
 public class CreateOrderByCustomer {
 
-    RestaurantSimulator restaurant;
+    Restaurant restaurant;
 
-    public CompletedOrder createNewOrderForCustomer() {
-        Order order = new Order();
+    public OrderReadyToDeliver createNewOrderForCustomer() {
+        Order order = new Order(1L, Order.OrderStatus.IN_PROGRESS);
         return restaurant.completeTheOrder(order);
     }
 }
