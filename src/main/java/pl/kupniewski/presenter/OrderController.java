@@ -5,23 +5,27 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.kupniewski.application.usecases.order.CreateOrderByCustomer;
-import pl.kupniewski.application.usecases.order.model.CompletedOrder;
+import pl.kupniewski.application.usecases.deliver.OrderReadyToDeliver;
 
 
 @Controller
 public class OrderController {
 
-    private CreateOrderByCustomer createOrderByCustomer;
+    private final CreateOrderByCustomer createOrderByCustomer;
+
+    public OrderController(CreateOrderByCustomer createOrderByCustomer) {
+        this.createOrderByCustomer = createOrderByCustomer;
+    }
 
     @GetMapping("/customer")
     public String greeting() {
-        return "customer.html";
+        return "customer";
     }
 
     @GetMapping("/customer/order")
-    public ResponseEntity<CompletedOrder> orderFood() {
-        CompletedOrder newOrderForCustomer = createOrderByCustomer.createNewOrderForCustomer();
-        return new ResponseEntity<CompletedOrder>(newOrderForCustomer, HttpStatus.OK);
+    public ResponseEntity<OrderReadyToDeliver> orderFood() {
+        OrderReadyToDeliver newOrderForCustomer = createOrderByCustomer.createNewOrderForCustomer();
+        return new ResponseEntity<>(newOrderForCustomer, HttpStatus.OK);
     }
 
 }
