@@ -1,25 +1,18 @@
 package pl.kupniewski.application.usecases.order;
 
 import lombok.AllArgsConstructor;
-import pl.kupniewski.application.authenticate.UserDao;
-import pl.kupniewski.application.usecases.rustleup.MenuDto;
-import pl.kupniewski.application.authenticate.UserDto;
-
-import java.util.Optional;
+import org.springframework.stereotype.Component;
+import pl.kupniewski.application.usecases.deliver.OrderReadyToDeliver;
+import pl.kupniewski.application.simulation.Restaurant;
 
 @AllArgsConstructor
+@Component
 public class CreateOrderByCustomer {
 
-    private final UserDao userDao;
-    private final OrderDto orderService;
+    Restaurant restaurant;
 
-    public OrderDto createNewOrderForUser(Long userId, MenuDto menu) {
-
-        UserDto user = Optional.of(userDao.findUserById(userId))
-                .orElseThrow(() -> new UnsupportedOperationException("Cannot find user"));
-
-        //transfer status from restaurant to deliverer
-
-        return null;
+    public OrderReadyToDeliver createNewOrderForCustomer() {
+        Order order = new Order(1L, Order.OrderStatus.IN_PROGRESS);
+        return restaurant.completeTheOrder(order);
     }
 }
