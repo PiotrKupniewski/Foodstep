@@ -18,7 +18,7 @@ public class OrderController {
     }
 
     @GetMapping("/customer")
-    public String greeting() {
+    public String customerView() {
         return "customer";
     }
 
