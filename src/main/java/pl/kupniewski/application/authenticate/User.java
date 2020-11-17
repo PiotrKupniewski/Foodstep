@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class User {
-    private String userLogin;
-    private UserRole role;
+    private final String userLogin;
+    private final UserRole role;
 
 }
