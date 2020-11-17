@@ -1,4 +1,4 @@
-package pl.kupniewski.application.authenticate;
+package pl.kupniewski.application.usecases.authenticate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
