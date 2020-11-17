@@ -1,16 +1,19 @@
 package pl.kupniewski.presenter;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import pl.kupniewski.application.authenticate.AuthenticateUser;
+import pl.kupniewski.application.usecases.authenticate.AuthenticateUser;
+import pl.kupniewski.application.usecases.authenticate.User;
+import pl.kupniewski.application.usecases.authenticate.UserRole;
 
 @Controller
+@AllArgsConstructor
 public class LoginPresenter {
-
-    AuthenticateUser authenticateUser;
 
     @GetMapping("/")
     public String loginUser(){
-        return authenticateUser.getAuthenticatedViewName();
+        AuthenticateUser authenticateUser = new AuthenticateUser(new User("customer", UserRole.CUTOMER));
+        return "redirect:"+authenticateUser.getAuthenticatedViewName();
     }
 }

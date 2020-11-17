@@ -1,11 +1,14 @@
-package pl.kupniewski.application.authenticate;
+package pl.kupniewski.application.usecases.authenticate;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class AuthenticateUser {
 
-    User customerUser = new User("customer", UserRole.CUTOMER);
+    private final User user;
 
     private User authenticate(){
-        return customerUser;
+        return user;
     }
 
     public String getAuthenticatedViewName(){
