@@ -2,17 +2,14 @@ package pl.kupniewski.application.authenticate;
 
 public class AuthenticateUser {
 
-    private UserRepository userRepository;
-
     User customerUser = new User("customer", UserRole.CUTOMER);
 
-    private User authenticate(String userLogin){
-        var user = userRepository.findByUserLogin(userLogin).orElseThrow(() -> new UnsupportedOperationException("User not found!"));
+    private User authenticate(){
         return customerUser;
     }
 
     public String getAuthenticatedViewName(){
-        User authenticatedUser = authenticate("restaurant");
+        User authenticatedUser = authenticate();
         return authenticatedUser.getRole() == UserRole.CUTOMER ? "customer" : "restaurant";
     }
 }
