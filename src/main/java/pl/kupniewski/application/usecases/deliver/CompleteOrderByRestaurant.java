@@ -1,7 +1,5 @@
-package pl.kupniewski.api.restaurant;
+package pl.kupniewski.application.usecases.deliver;
 
-import pl.kupniewski.application.usecases.deliver.DeliverOrderToCustomer;
-import pl.kupniewski.application.usecases.deliver.OrderReadyToDeliver;
 import pl.kupniewski.application.usecases.order.Order;
 
 public class CompleteOrderByRestaurant {

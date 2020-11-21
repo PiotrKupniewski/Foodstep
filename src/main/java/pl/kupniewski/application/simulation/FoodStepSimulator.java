@@ -1,4 +1,4 @@
-package pl.kupniewski.application;
+package pl.kupniewski.application.simulation;
 
 import lombok.AllArgsConstructor;
 import org.springframework.boot.SpringApplication;
