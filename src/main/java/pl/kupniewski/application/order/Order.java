@@ -1,4 +1,4 @@
-package pl.kupniewski.application.usecases.order;
+package pl.kupniewski.application.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
