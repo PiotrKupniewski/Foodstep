@@ -1,13 +1,14 @@
-package pl.kupniewski.application.usecases.deliver;
+package pl.kupniewski.application.deliver;
 
-import pl.kupniewski.application.usecases.order.Order;
+import pl.kupniewski.application.order.Order;
 
 public class CompleteOrderByRestaurant {
 
     DeliverOrderToCustomer deliverer;
 
     public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
-        return deliverer.deliverOrderToCustomer(new OrderReadyToDeliver("Send to deliverer", order));
+        OrderReadyToDeliver orderToDeliver = new OrderReadyToDeliver("Send to deliverer", order);
+        deliverer.assignOrder(orderToDeliver);
+        return orderToDeliver;
     }
-
 }

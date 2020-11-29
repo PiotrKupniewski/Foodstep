@@ -1,10 +1,15 @@
-package pl.kupniewski.application.usecases.deliver;
+package pl.kupniewski.application.deliver;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class DeliverOrderToCustomer {
-    public OrderReadyToDeliver deliverOrderToCustomer(OrderReadyToDeliver orderToDeliver) {
-        return new OrderReadyToDeliver("Orde has been delivered", orderToDeliver.getOrder() );
+
+    List<OrderReadyToDeliver> ordersToDeliverList;
+
+    public void assignOrder(OrderReadyToDeliver orderToDeliver) {
+        ordersToDeliverList.add(orderToDeliver);
     }
 }

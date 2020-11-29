@@ -1,18 +1,18 @@
-package pl.kupniewski.application.usecases.order;
+package pl.kupniewski.application.order;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.usecases.deliver.CompleteOrderByRestaurant;
-import pl.kupniewski.application.usecases.deliver.OrderReadyToDeliver;
+import pl.kupniewski.application.RestaurantApi;
 
 @AllArgsConstructor
 @Component
 public class CreateOrderByCustomer {
 
-     CompleteOrderByRestaurant restaurantApi;
+    RestaurantApi restaurant;
 
-    public OrderReadyToDeliver createNewOrderForCustomer() {
+    public Order createNewOrderForCustomer() {
         Order order = new Order(1L, Order.OrderStatus.IN_PROGRESS);
-        return restaurantApi.assignOrderToDeliverer(order);
+        restaurant.addOrderToList(order);
+        return order;
     }
 }
