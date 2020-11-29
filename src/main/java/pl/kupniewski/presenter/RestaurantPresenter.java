@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @AllArgsConstructor
 @RequestMapping("/restaurant")
-public class RestaurantController {
+public class RestaurantPresenter {
 
     RestaurantApi restaurant;
 

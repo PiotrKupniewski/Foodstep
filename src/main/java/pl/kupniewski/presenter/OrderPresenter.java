@@ -11,11 +11,11 @@ import pl.kupniewski.application.order.Order;
 
 @Controller
 @RequestMapping("/customer")
-public class OrderController {
+public class OrderPresenter {
 
     private final CreateOrderByCustomer createOrderByCustomer;
 
-    public OrderController(CreateOrderByCustomer createOrderByCustomer) {
+    public OrderPresenter(CreateOrderByCustomer createOrderByCustomer) {
         this.createOrderByCustomer = createOrderByCustomer;
     }
 
