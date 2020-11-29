@@ -1,14 +1,36 @@
 package pl.kupniewski.presenter;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import pl.kupniewski.application.RestaurantApi;
+import pl.kupniewski.application.deliver.OrderReadyToDeliver;
+import pl.kupniewski.application.order.Order;
+
+import java.util.List;
 
 @Controller
+@AllArgsConstructor
+@RequestMapping("/restaurant")
 public class RestaurantController {
 
-    @GetMapping("/restaurant")
+    RestaurantApi restaurant;
+
+    @GetMapping("")
     public String restaurantView() {
         return "restaurant";
+    }
+
+    @GetMapping("/completeOrder")
+    public OrderReadyToDeliver completeOrderByRestaurant(@RequestBody Order order) {
+        return restaurant.completeOrderByRestaurant(order);
+    }
+
+    @GetMapping("/getActiveOrders")
+    public List<Order> getActiveOrders() {
+        return restaurant.getActiveOrders();
     }
 
 }
