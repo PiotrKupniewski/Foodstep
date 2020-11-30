@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
-import pl.kupniewski.simulation.DelivererApi;
+import pl.kupniewski.application.deliver.api.DelivererApi;
 
 @Controller
 @RequestMapping("/deliverer")

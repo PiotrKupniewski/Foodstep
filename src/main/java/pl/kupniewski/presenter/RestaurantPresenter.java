@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.kupniewski.application.RestaurantApi;
+import pl.kupniewski.application.deliver.api.RestaurantApi;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 import pl.kupniewski.application.order.Order;
 

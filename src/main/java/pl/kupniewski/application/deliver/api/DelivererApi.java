@@ -1,4 +1,6 @@
-package pl.kupniewski.application.deliver;
+package pl.kupniewski.application.deliver.api;
+
+import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 
 public class DelivererApi {
 

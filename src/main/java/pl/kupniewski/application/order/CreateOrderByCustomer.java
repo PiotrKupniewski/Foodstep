@@ -2,7 +2,7 @@ package pl.kupniewski.application.order;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.RestaurantApi;
+import pl.kupniewski.application.deliver.api.RestaurantApi;
 
 @AllArgsConstructor
 @Component

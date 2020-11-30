@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.kupniewski.application.order.CreateOrderByCustomer;
+import pl.kupniewski.application.order.CustomerApi;
 import pl.kupniewski.application.order.Order;
 
 
@@ -13,10 +14,10 @@ import pl.kupniewski.application.order.Order;
 @RequestMapping("/customer")
 public class OrderPresenter {
 
-    private final CreateOrderByCustomer createOrderByCustomer;
+    private final CustomerApi customerApi;
 
-    public OrderPresenter(CreateOrderByCustomer createOrderByCustomer) {
-        this.createOrderByCustomer = createOrderByCustomer;
+    public OrderPresenter(CustomerApi customerApi) {
+        this.customerApi = customerApi;
     }
 
     @GetMapping("")
@@ -26,7 +27,7 @@ public class OrderPresenter {
 
     @GetMapping("/order")
     public ResponseEntity<Order> orderFood() {
-        return new ResponseEntity<>(createOrderByCustomer.createNewOrderForCustomer(), HttpStatus.OK);
+        return new ResponseEntity<>(customerApi.createNewOrderForCustomer(), HttpStatus.OK);
     }
 
 }
