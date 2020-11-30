@@ -11,9 +11,15 @@ import pl.kupniewski.application.authenticate.UserRole;
 @AllArgsConstructor
 public class LoginPresenter {
 
-    @GetMapping("/")
-    public String loginUser(){
+    @GetMapping("/customerLogin")
+    public String loginCustomerUser(){
         AuthenticateUser authenticateUser = new AuthenticateUser(new User("customer", UserRole.CUTOMER));
+        return "redirect:"+authenticateUser.getAuthenticatedViewName();
+    }
+
+    @GetMapping("/restaurantLogin")
+    public String loginRestaurantUser(){
+        AuthenticateUser authenticateUser = new AuthenticateUser(new User("restaurant", UserRole.RESTAURANT));
         return "redirect:"+authenticateUser.getAuthenticatedViewName();
     }
 }
