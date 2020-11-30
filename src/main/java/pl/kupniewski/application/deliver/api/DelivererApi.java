@@ -1,6 +1,4 @@
-package pl.kupniewski.simulation;
-
-import pl.kupniewski.application.deliver.OrderReadyToDeliver;
+package pl.kupniewski.application.deliver;
 
 public class DelivererApi {
 

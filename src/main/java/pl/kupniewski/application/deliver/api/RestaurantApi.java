@@ -1,4 +1,4 @@
-package pl.kupniewski.application;
+package pl.kupniewski.application.api;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
