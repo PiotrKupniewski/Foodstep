@@ -1,2 +1,8 @@
-package pl.kupniewski.application.menu;public class Menu {
+package pl.kupniewski.application.menu;
+
+
+public class MenuCreator {
+    public Menu createNewMenu(){
+        return new Menu();
+    }
 }

@@ -1,9 +1,11 @@
-package pl.kupniewski.application.api;
+package pl.kupniewski.application.deliver.api;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.kupniewski.application.deliver.CompleteOrderByRestaurant;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
+import pl.kupniewski.application.menu.Menu;
+import pl.kupniewski.application.menu.MenuCreator;
 import pl.kupniewski.application.order.Order;
 
 import java.util.List;
@@ -25,5 +27,9 @@ public class RestaurantApi {
 
     public List<Order> getActiveOrders() {
         return ordersList;
+    }
+
+    public Menu createMenu(){
+        throw new UnsupportedOperationException();
     }
 }
