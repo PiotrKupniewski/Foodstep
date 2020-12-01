@@ -1,16 +1,17 @@
 package pl.kupniewski.application.deliver;
 
 import org.springframework.stereotype.Component;
+import pl.kupniewski.application.deliver.api.DelivererApi;
 import pl.kupniewski.application.order.Order;
 
 @Component
 public class CompleteOrderByRestaurant {
 
-    DeliverOrderToCustomer deliverer;
+    DelivererApi delivererApi;
 
     public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
         OrderReadyToDeliver orderToDeliver = new OrderReadyToDeliver("Send to deliverer", order);
-        deliverer.assignOrder(orderToDeliver);
+        delivererApi.assignOrderToDeliverer(orderToDeliver);
         return orderToDeliver;
     }
 }
