@@ -6,30 +6,36 @@ import pl.kupniewski.application.deliver.CompleteOrderByRestaurant;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 import pl.kupniewski.application.menu.Menu;
 import pl.kupniewski.application.menu.MenuCreator;
+import pl.kupniewski.application.menu.MenuItem;
 import pl.kupniewski.application.order.Order;
+import pl.kupniewski.simulation.RestaurantSimulator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @Component
 public class RestaurantApi {
 
-    private final List<Order> ordersList;
-    private final CompleteOrderByRestaurant completedOrder;
+    private final RestaurantSimulator restaurantSimulator;
+    private final MenuCreator menuCreator;
+    private final CompleteOrderByRestaurant completeOrder;
 
-    public OrderReadyToDeliver completeOrderByRestaurant(Order order) {
-        return completedOrder.assignOrderToDeliverer(order);
-    }
-
-    public void addOrderToList(Order order) {
-        ordersList.add(order);
+    public void addOrderToRestaurantList(Order order) {
+        restaurantSimulator.getOrdersList().add(order);
     }
 
     public List<Order> getActiveOrders() {
-        return ordersList;
+        return restaurantSimulator.getOrdersList();
     }
 
     public Menu createMenu(){
-        throw new UnsupportedOperationException();
+        List<MenuItem> items = new ArrayList<>();
+        return menuCreator.createNewMenu(items);
     }
+
+    public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
+        return completeOrder.assignOrderToDeliverer(order);
+    }
+
 }
