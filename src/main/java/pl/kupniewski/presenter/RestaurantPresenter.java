@@ -25,12 +25,17 @@ public class RestaurantPresenter {
 
     @GetMapping("/completeOrder")
     public OrderReadyToDeliver completeOrderByRestaurant(@RequestBody Order order) {
-        return restaurant.completeOrderByRestaurant(order);
+        return restaurant.assignOrderToDeliverer(order);
     }
 
     @GetMapping("/getActiveOrders")
     public List<Order> getActiveOrders() {
         return restaurant.getActiveOrders();
+    }
+
+    @GetMapping("/createMenu")
+    public Menu createNewRestaurantMenu() {
+        return restaurant.createMenu();
     }
 
 }
