@@ -12,7 +12,7 @@ public class CreateOrderByCustomer {
 
     public Order createNewOrderForCustomer() {
         Order order = new Order(1L, Order.OrderStatus.IN_PROGRESS);
-        restaurant.addOrderToList(order);
+        restaurant.addOrderToRestaurantList(order);
         return order;
     }
 }
