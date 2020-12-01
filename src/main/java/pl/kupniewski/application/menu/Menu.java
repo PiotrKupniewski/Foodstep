@@ -1,12 +1,13 @@
 package pl.kupniewski.application.menu;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
 
 @Getter
+@AllArgsConstructor
 public class Menu {
-
-    private Long id;
-    private List<MenuItem> items;
+    private final Long id;
+    private final List<MenuItem> items;
 }
