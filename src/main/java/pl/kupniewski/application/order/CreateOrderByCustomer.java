@@ -11,7 +11,7 @@ public class CreateOrderByCustomer {
     RestaurantApi restaurant;
 
     public Order createNewOrderForCustomer() {
-        Order order = new Order(1L, Order.OrderStatus.IN_PROGRESS);
+        Order order = new Order(1L, Order.Status.IN_PROGRESS);
         restaurant.addOrderToRestaurantList(order);
         return order;
     }

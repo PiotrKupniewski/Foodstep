@@ -8,9 +8,9 @@ import lombok.Getter;
 public class Order {
 
     private final Long orderId;
-    private final OrderStatus orderStatus;
+    private final Status status;
 
-    public enum OrderStatus {
+    public enum Status {
         IN_PROGRESS
     }
 }
