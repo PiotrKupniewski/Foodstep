@@ -28,10 +28,15 @@ public class RestaurantPresenter {
     public OrderReadyToDeliver completeOrderByRestaurant(@RequestBody Order order) {
         return restaurant.assignOrderToDeliverer(order);
     }
+    @GetMapping("/createOrderStorage")
+    public OrderStorage createOrdersStorage() {
+        return restaurant.createOrdersStorage();
+    }
 
     @GetMapping("/getActiveOrders")
     public List<Order> getActiveOrders() {
-        return restaurant.getActiveOrders();
+        return new ArrayList<>(restaurant.getActiveOrders()
+                .values());
     }
 
     @GetMapping("/createMenu")
