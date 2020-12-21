@@ -13,6 +13,6 @@ public class Order {
     private final Status status;
 
     public enum Status {
-        IN_PROGRESS
+        IN_PROGRESS, FINISHED
     }
 }
