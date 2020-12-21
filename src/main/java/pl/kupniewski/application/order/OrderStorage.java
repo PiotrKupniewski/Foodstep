@@ -22,6 +22,10 @@ public class OrderStorage {
     }
 
     public String addNewOrderToStorage(Order order) {
+        ordersStorage.values()
+                .stream()
+                .forEach(System.out::println);
+
         ordersStorage.put(order.getOrderId(), order);
         return "Order added!";
     }

@@ -36,9 +36,9 @@ public class RestaurantPresenter {
     }
 
     @GetMapping("/getActiveOrders")
-    public List<Order> getActiveOrders() {
-        return new ArrayList<>(restaurant.getActiveOrders()
-                .values());
+    public ResponseEntity<List<Order>> getActiveOrders() {
+        return new ResponseEntity<>(new ArrayList<>(restaurant.getActiveOrders()
+                .values()), HttpStatus.OK);
     }
 
     @GetMapping("/createMenu")
