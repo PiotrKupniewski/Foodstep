@@ -2,7 +2,6 @@ package pl.kupniewski.application.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 

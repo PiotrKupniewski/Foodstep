@@ -1,4 +1,4 @@
-package pl.kupniewski.application.deliver.api;
+package pl.kupniewski.application.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +16,7 @@ public class OrderStorage {
 
     private final Map<UUID, Order> ordersStorage;
 
-    protected String removeOrderFromStorage(Order order) {
+    public String removeOrderFromStorage(Order order) {
         Optional.ofNullable(order).orElseThrow(() -> new UnsupportedOperationException("Cannot add empty order"));
         ordersStorage.remove(order.getOrderId());
         return "Order deleted!";
