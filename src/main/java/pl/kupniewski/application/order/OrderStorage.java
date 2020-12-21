@@ -17,7 +17,6 @@ public class OrderStorage {
     private final Map<UUID, Order> ordersStorage;
 
     public String removeOrderFromStorage(Order order) {
-        Optional.ofNullable(order).orElseThrow(() -> new UnsupportedOperationException("Cannot add empty order"));
         ordersStorage.remove(order.getOrderId());
         return "Order deleted!";
     }
