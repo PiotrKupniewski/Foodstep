@@ -3,10 +3,8 @@ package pl.kupniewski.application.order;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.order.Order;
 
 import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 
 @Getter
