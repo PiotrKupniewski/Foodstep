@@ -30,7 +30,7 @@ public class RestaurantPresenter {
         return "restaurant";
     }
 
-    @GetMapping("/completeOrder")
+    @PostMapping("/completeOrder")
     public OrderReadyToDeliver completeOrderByRestaurant(@RequestBody Order order) {
         return restaurant.assignOrderToDeliverer(order);
     }

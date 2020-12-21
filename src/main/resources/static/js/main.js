@@ -5,12 +5,11 @@ let span = document.getElementById('statusSpan');
 
 
 orderButton.addEventListener("click", () => {
-    span.innerText =  "Status : Order has been delivered";
+
     fetch('http://localhost:8080/customer/order')
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => span.innerText =  "Status : Order " +data.orderId +"has been ordered")
         .catch(error => console.log('error:', error));
-
 });
 
 
