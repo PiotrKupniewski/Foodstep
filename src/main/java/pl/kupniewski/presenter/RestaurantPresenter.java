@@ -31,8 +31,8 @@ public class RestaurantPresenter {
     }
 
     @PostMapping("/completeOrder")
-    public OrderReadyToDeliver completeOrderByRestaurant(@RequestBody Order order) {
-        return restaurant.assignOrderToDeliverer(order);
+    public ResponseEntity<OrderReadyToDeliver> completeOrderByRestaurant(@RequestBody Order order) {
+        return new ResponseEntity<>(restaurant.assignOrderToDeliverer(order), HttpStatus.OK);
     }
     @GetMapping("/createOrderStorage")
     public OrderStorage createOrdersStorage() {
