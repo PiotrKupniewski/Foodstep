@@ -11,7 +11,7 @@ completeOrderButton.addEventListener("click", () => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({orderId: info.children[0].children[0].firstElementChild.innerText, status :"IN_PROGESS"})
+        body: JSON.stringify({orderId: info.children[0].children[0].firstElementChild.innerText, status :"IN_PROGRESS"})
     })
     .then(response => response.json())
     .then(data => {
@@ -24,6 +24,10 @@ completeOrderButton.addEventListener("click", () => {
 let createOrderList = (data) => {
     let listWrapper = document.createElement('div');
     let ul = document.createElement("ul");
+
+    if(data.length === 0 ){
+        ul.innerText = "There are no active orders";
+    }
 
     console.log(data);
     listWrapper.appendChild(ul);
