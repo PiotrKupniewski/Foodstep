@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class CustomerApi {
 
-    private CreateOrderByCustomer customer;
+    private final CreateOrderByCustomer orderService;
 
-    public Order createNewOrderForCustomer(){
-        return customer.createNewOrderForCustomer();
+    public Order createNewOrderForCustomer() {
+        return orderService.createNewOrderForCustomer();
     }
 }
