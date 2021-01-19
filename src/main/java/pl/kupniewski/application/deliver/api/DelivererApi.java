@@ -15,7 +15,7 @@ public class DelivererApi {
     DelivererStorage delivererStorage;
 
     public OrderReadyToDeliver deliverOrderToCustomer(OrderReadyToDeliver orderToDeliver) {
-        return new OrderReadyToDeliver("Order has been delivered", orderToDeliver.getOrder());
+        return getActiverders().get(orderToDeliver.getOrder().getOrderId());
     }
 
     public Map<UUID, OrderReadyToDeliver> getActiverders(){
