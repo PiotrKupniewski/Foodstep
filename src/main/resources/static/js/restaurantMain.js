@@ -16,7 +16,7 @@ completeOrderButton.addEventListener("click", () => {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        info.innerText = "Order has been delivered";
+        info.innerText = "Order has been transfered to deliverer";
     }).catch(error => console.log('error:', error));
 });
 
