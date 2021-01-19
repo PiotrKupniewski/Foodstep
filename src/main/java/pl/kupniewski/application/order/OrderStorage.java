@@ -14,18 +14,16 @@ public class OrderStorage {
 
     private final Map<UUID, Order> ordersStorage;
 
-    public String removeOrderFromStorage(Order order) {
+    public void removeOrderFromStorage(Order order) {
         ordersStorage.remove(order.getOrderId());
-        return "Order deleted!";
     }
 
-    public String addNewOrderToStorage(Order order) {
+    public void addNewOrderToStorage(Order order) {
         ordersStorage.values()
                 .stream()
                 .forEach(System.out::println);
 
         ordersStorage.put(order.getOrderId(), order);
-        return "Order added!";
     }
 
 }
