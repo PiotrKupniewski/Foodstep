@@ -1,4 +1,4 @@
-package pl.kupniewski.application.deliver.api;
+package pl.kupniewski.application.restaurant;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
