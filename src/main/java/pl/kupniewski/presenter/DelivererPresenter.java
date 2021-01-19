@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
@@ -14,7 +13,8 @@ import pl.kupniewski.application.deliver.api.DelivererApi;
 import java.util.Map;
 import java.util.UUID;
 
-@Controller@AllArgsConstructor
+@Controller
+@AllArgsConstructor
 @RequestMapping("/deliverer")
 public class DelivererPresenter {
 
@@ -32,6 +32,6 @@ public class DelivererPresenter {
 
     @GetMapping("/getActiveOrders")
     public ResponseEntity<Map<UUID, OrderReadyToDeliver>> getActiveDelivererOrders() {
-            return new ResponseEntity<>(delivererApi.getActiverders(), HttpStatus.OK);
+        return new ResponseEntity<>(delivererApi.getActiverders(), HttpStatus.OK);
     }
 }

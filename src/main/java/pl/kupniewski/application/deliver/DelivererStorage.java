@@ -10,13 +10,13 @@ import java.util.UUID;
 @AllArgsConstructor
 public class DelivererStorage {
 
-    private Map<UUID, OrderReadyToDeliver> delivererStorage;
+    private final Map<UUID, OrderReadyToDeliver> delivererStorage;
 
     public void assignOrderToDeliverer(OrderReadyToDeliver orderToDeliver) {
-        delivererStorage.put(orderToDeliver.getOrder().getOrderId(),orderToDeliver);
+        delivererStorage.put(orderToDeliver.getOrder().getOrderId(), orderToDeliver);
     }
 
-    public Map<UUID, OrderReadyToDeliver> getActiveOrder(){
+    public Map<UUID, OrderReadyToDeliver> getActiveOrder() {
         return delivererStorage;
     }
 }
