@@ -9,11 +9,11 @@ import pl.kupniewski.application.order.Order;
 @AllArgsConstructor
 public class CompleteOrderByRestaurant {
 
-    DelivererApi delivererApi;
+    DelivererStorage delivererStorage;
 
     public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
         OrderReadyToDeliver orderToDeliver = new OrderReadyToDeliver("Send to deliverer", order);
-        delivererApi.assignOrderToDeliverer(orderToDeliver);
+        delivererStorage.assignOrderToDeliverer(orderToDeliver);
         return orderToDeliver;
     }
 }
