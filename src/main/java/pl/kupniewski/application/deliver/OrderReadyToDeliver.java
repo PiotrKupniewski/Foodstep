@@ -7,6 +7,18 @@ import pl.kupniewski.application.order.Order;
 @Getter
 @AllArgsConstructor
 public class OrderReadyToDeliver {
-    private final String status;
+    private final Order.Status status;
     private final Order order;
+
+    public OrderReadyToDeliver markOrderAsDelivered(){
+        return new OrderReadyToDeliver(Order.Status.FINISHED, order);
+    }
+
+    @Override
+    public String toString() {
+        return "OrderReadyToDeliver{" +
+                "status=" + status +
+                ", order=" + order +
+                '}';
+    }
 }
