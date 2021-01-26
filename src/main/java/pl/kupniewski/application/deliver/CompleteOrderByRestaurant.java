@@ -12,7 +12,7 @@ public class CompleteOrderByRestaurant {
     DelivererStorage delivererStorage;
 
     public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
-        OrderReadyToDeliver orderToDeliver = new OrderReadyToDeliver("Send to deliverer", order);
+        OrderReadyToDeliver orderToDeliver = new OrderReadyToDeliver(Order.Status.SEND_TO_DELIVERER, order);
         delivererStorage.assignOrderToDeliverer(orderToDeliver);
         return orderToDeliver;
     }

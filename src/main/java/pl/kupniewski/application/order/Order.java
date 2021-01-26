@@ -15,6 +15,14 @@ public class Order {
     private Status status;
 
     public enum Status {
-        IN_PROGRESS, FINISHED
+        IN_PROGRESS, FINISHED, SEND_TO_DELIVERER
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", status=" + status +
+                '}';
     }
 }
