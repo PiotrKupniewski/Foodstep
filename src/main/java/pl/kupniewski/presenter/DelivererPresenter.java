@@ -22,13 +22,16 @@ public class DelivererPresenter {
         return "deliverer";
     }
 
-    @GetMapping("/deliverOrder")
-    public ResponseEntity<OrderReadyToDeliver> deliverOrderToCustomer(@RequestBody OrderReadyToDeliver orderReadyToDeliver) {
-        return new ResponseEntity<>(delivererApi.deliverOrderToCustomer(orderReadyToDeliver), HttpStatus.OK);
+    @PostMapping("/deliverOrder")
+    public ResponseEntity<OrderReadyToDeliver> deliverOrderToCustomer(
+            @RequestBody OrderReadyToDeliver order
+    ) {
+        System.out.println(order);
+        return new ResponseEntity<>(delivererApi.deliverOrderToCustomer(order), HttpStatus.OK);
     }
 
-    @GetMapping("/getActiveOrders")
-    public ResponseEntity<Map<UUID, OrderReadyToDeliver>> getActiveDelivererOrders() {
-        return new ResponseEntity<>(delivererApi.getActiverders(), HttpStatus.OK);
+    @PostMapping("/getActiveOrders")
+    public ResponseEntity<List<OrderReadyToDeliver>> getActiveDelivererOrders() {
+        return new ResponseEntity<>(delivererApi.getActiverdersList(), HttpStatus.OK);
     }
 }
