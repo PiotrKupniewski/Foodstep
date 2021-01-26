@@ -14,11 +14,18 @@ public class DelivererApi {
 
     DelivererStorage delivererStorage;
 
-    public OrderReadyToDeliver deliverOrderToCustomer(OrderReadyToDeliver orderToDeliver) {
-        return getActiverders().get(orderToDeliver.getOrder().getOrderId());
+    public OrderReadyToDeliver deliverOrderToCustomer(OrderReadyToDeliver order) {
+        return order.markOrderAsDelivered();
     }
 
     public Map<UUID, OrderReadyToDeliver> getActiverders(){
         return delivererStorage.getActiveOrder();
+    }
+
+    public List<OrderReadyToDeliver> getActiverdersList(){
+        return delivererStorage.getActiveOrder()
+                .values()
+                .stream()
+                .collect(Collectors.toList());
     }
 }
