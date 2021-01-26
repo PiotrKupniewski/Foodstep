@@ -5,8 +5,10 @@ import org.springframework.stereotype.Component;
 import pl.kupniewski.application.deliver.DelivererStorage;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Component
