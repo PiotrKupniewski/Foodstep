@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
-import pl.kupniewski.application.deliver.api.DelivererApi;
+import pl.kupniewski.application.deliver.DelivererApi;
 
 import java.util.List;
 

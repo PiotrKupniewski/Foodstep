@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.kupniewski.application.order.OrderStorage;
+import pl.kupniewski.application.storages.OrderStorage;
 import pl.kupniewski.application.restaurant.RestaurantApi;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
-import pl.kupniewski.application.menu.Menu;
+import pl.kupniewski.application.restaurant.menu.Menu;
 import pl.kupniewski.application.order.Order;
 
 import java.util.ArrayList;

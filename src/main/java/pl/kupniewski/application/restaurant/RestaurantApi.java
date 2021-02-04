@@ -2,13 +2,12 @@ package pl.kupniewski.application.restaurant;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.deliver.CompleteOrderByRestaurant;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
-import pl.kupniewski.application.menu.Menu;
-import pl.kupniewski.application.menu.MenuCreator;
-import pl.kupniewski.application.menu.MenuItem;
+import pl.kupniewski.application.restaurant.menu.Menu;
+import pl.kupniewski.application.restaurant.menu.MenuCreator;
+import pl.kupniewski.application.restaurant.menu.MenuItem;
 import pl.kupniewski.application.order.Order;
-import pl.kupniewski.application.order.OrderStorage;
+import pl.kupniewski.application.storages.OrderStorage;
 
 import java.util.*;
 

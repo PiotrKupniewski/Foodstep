@@ -1,7 +1,8 @@
-package pl.kupniewski.application.deliver;
+package pl.kupniewski.application.storages;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 
 import java.util.Map;
 import java.util.UUID;

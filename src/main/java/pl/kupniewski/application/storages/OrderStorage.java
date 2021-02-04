@@ -1,8 +1,9 @@
-package pl.kupniewski.application.order;
+package pl.kupniewski.application.storages;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
+import pl.kupniewski.application.order.Order;
 
 import java.util.Map;
 import java.util.UUID;

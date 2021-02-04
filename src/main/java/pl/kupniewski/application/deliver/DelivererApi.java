@@ -1,8 +1,8 @@
-package pl.kupniewski.application.deliver.api;
+package pl.kupniewski.application.deliver;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.deliver.DelivererStorage;
+import pl.kupniewski.application.storages.DelivererStorage;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 
 import java.util.List;
@@ -20,6 +20,7 @@ public class DelivererApi {
         return order.markOrderAsDelivered();
     }
 
+    @Deprecated
     public Map<UUID, OrderReadyToDeliver> getActiverders(){
         return delivererStorage.getActiveOrder();
     }
