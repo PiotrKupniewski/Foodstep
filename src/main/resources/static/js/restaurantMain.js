@@ -25,6 +25,13 @@ let createOrderList = (data) => {
     let listWrapper = document.createElement('div');
     let ul = document.createElement("ul");
 
+    function removeCurrentList() {
+        while (info.firstChild) {
+            info.removeChild(info.firstChild);
+        }
+    }
+    removeCurrentList();
+
     if(data.length === 0 ){
         ul.innerText = "There are no active orders";
     }

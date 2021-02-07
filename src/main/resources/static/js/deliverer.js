@@ -2,7 +2,30 @@
 let getReadyOrdersButton = document.getElementById('getReadyOrders');
 let markAsDelivered = document.getElementById('setOrderAsDelivered');
 let spanDeliverer = document.getElementById('info');
+let ordersDiv = document.getElementById('orders');
 let readyOrders =[];
+
+let createOdersGrid = (orders) =>  {
+
+    orders.forEach(x => {
+        let paragraph = document.createElement('p');
+        let radio = document.createElement('input');
+        radio.setAttribute('type', 'radio');
+        radio.setAttribute('name', 'choice');
+        radio.setAttribute('is', x.order.orderId);
+
+        let label = document.createElement('label');
+        label.setAttribute('for', x.order.orderId)
+
+
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(`${x.order.orderId}`));
+
+        paragraph.append(label);
+        ordersDiv.append(paragraph);
+    });
+
+}
 
 getReadyOrdersButton.addEventListener("click", () => {
 
@@ -15,7 +38,7 @@ getReadyOrdersButton.addEventListener("click", () => {
     })
         .then(response => response.json())
         .then(data => readyOrders = data)
-        .then(data => spanDeliverer.innerText =  JSON.stringify(data))
+        .then(data => createOdersGrid(readyOrders))
         .catch(error => console.log('error:', error));
 });
 
