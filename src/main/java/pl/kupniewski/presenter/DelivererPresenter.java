@@ -23,11 +23,10 @@ public class DelivererPresenter {
     }
 
     @PostMapping("/deliverOrder")
-    public ResponseEntity<OrderReadyToDeliver> deliverOrderToCustomer(
-            @RequestBody OrderReadyToDeliver order
+    public ResponseEntity<List<OrderReadyToDeliver>> deliverOrderToCustomer(
+            @RequestBody List<OrderReadyToDeliver> orders
     ) {
-        System.out.println(order);
-        return new ResponseEntity<>(delivererApi.deliverOrderToCustomer(order), HttpStatus.OK);
+        return new ResponseEntity<>(delivererApi.deliverOrderToCustomer(orders), HttpStatus.OK);
     }
 
     @PostMapping("/getActiveOrders")

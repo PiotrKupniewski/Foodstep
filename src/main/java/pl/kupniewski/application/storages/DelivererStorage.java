@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -19,5 +20,11 @@ public class DelivererStorage {
 
     public Map<UUID, OrderReadyToDeliver> getActiveOrder() {
         return delivererStorage;
+    }
+
+    public void markOrderAsDelivered(List<OrderReadyToDeliver> orders) {
+        orders.forEach((x) -> {
+            delivererStorage.remove(x.getOrder().getOrderId());
+        });
     }
 }

@@ -16,8 +16,9 @@ public class DelivererApi {
 
     DelivererStorage delivererStorage;
 
-    public OrderReadyToDeliver deliverOrderToCustomer(OrderReadyToDeliver order) {
-        return order.markOrderAsDelivered();
+    public List<OrderReadyToDeliver> deliverOrderToCustomer(List<OrderReadyToDeliver> orders) {
+        delivererStorage.markOrderAsDelivered(orders);
+        return getActiverdersList();
     }
 
     @Deprecated

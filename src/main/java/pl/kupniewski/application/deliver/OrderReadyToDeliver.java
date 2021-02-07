@@ -10,10 +10,6 @@ public class OrderReadyToDeliver {
     private final Order.Status status;
     private final Order order;
 
-    public OrderReadyToDeliver markOrderAsDelivered(){
-        return new OrderReadyToDeliver(Order.Status.FINISHED, order);
-    }
-
     @Override
     public String toString() {
         return "OrderReadyToDeliver{" +
