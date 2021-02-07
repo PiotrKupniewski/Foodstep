@@ -21,7 +21,6 @@ public class OrderStorage {
 
     public void addNewOrderToStorage(Order order) {
         ordersStorage.values()
-                .stream()
                 .forEach(System.out::println);
 
         ordersStorage.put(order.getOrderId(), order);

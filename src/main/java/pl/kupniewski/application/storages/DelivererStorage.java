@@ -23,8 +23,6 @@ public class DelivererStorage {
     }
 
     public void markOrderAsDelivered(List<OrderReadyToDeliver> orders) {
-        orders.forEach((x) -> {
-            delivererStorage.remove(x.getOrder().getOrderId());
-        });
+        orders.forEach((x) -> delivererStorage.remove(x.getOrder().getOrderId()));
     }
 }
