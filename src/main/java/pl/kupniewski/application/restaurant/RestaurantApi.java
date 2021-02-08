@@ -17,7 +17,7 @@ public class RestaurantApi {
 
     private final MenuCreator menuCreator;
     private final CompleteOrderByRestaurant completedOrder;
-    private RestaurantStorage ordersStorage;
+    private RestaurantOrdersStorage ordersStorage;
 
     public Menu createMenu(){
         List<MenuItem> items = new ArrayList<>();
@@ -30,14 +30,14 @@ public class RestaurantApi {
     }
 
     public OrderStorage createOrdersStorage(){
-        if(ordersStorage != null && ordersStorage.getActiveOrders().size()==0) {
+        if(ordersStorage != null && ordersStorage.getRestaurantOrders().size()==0) {
             this.ordersStorage = new OrderStorage(new HashMap<>());
         }
-        return new OrderStorage(ordersStorage.getActiveOrders());
+        return new OrderStorage(ordersStorage.getRestaurantOrders());
     }
 
     public Map<UUID, Order> getActiveOrders(){
-        return ordersStorage.getActiveOrders();
+        return ordersStorage.getRestaurantOrders();
     }
 
 

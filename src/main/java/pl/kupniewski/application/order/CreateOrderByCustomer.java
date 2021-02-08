@@ -8,7 +8,7 @@ import pl.kupniewski.application.order.Order.Status;
 @Component
 public class CreateOrderByCustomer {
 
-    private final CustomerStorage orderStorage;
+    private final CustomerOrdersStorage orderStorage;
     public Order createNewOrderForCustomer() {
         Order order = new Order(Status.IN_PROGRESS);
         orderStorage.addNewOrderToStorage(order);

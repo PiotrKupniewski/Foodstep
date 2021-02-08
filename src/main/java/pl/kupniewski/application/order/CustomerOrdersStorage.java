@@ -1,5 +1,5 @@
 package pl.kupniewski.application.order;
 
-public interface CustomerStorage {
+public interface CustomerOrdersStorage {
     void addNewOrderToStorage(Order order);
 }

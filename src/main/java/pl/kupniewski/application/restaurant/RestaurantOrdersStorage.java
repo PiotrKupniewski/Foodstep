@@ -5,8 +5,8 @@ import pl.kupniewski.application.order.Order;
 import java.util.Map;
 import java.util.UUID;
 
-public interface RestaurantStorage {
+public interface RestaurantOrdersStorage {
 
     void removeOrderFromStorage(Order order);
-    Map<UUID, Order> getActiveOrders();
+    Map<UUID, Order> getRestaurantOrders();
 }
