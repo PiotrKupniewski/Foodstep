@@ -3,7 +3,9 @@ package pl.kupniewski.application.storages;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
+import pl.kupniewski.application.order.CustomerStorage;
 import pl.kupniewski.application.order.Order;
+import pl.kupniewski.application.restaurant.RestaurantStorage;
 
 import java.util.Map;
 import java.util.UUID;
@@ -11,7 +13,7 @@ import java.util.UUID;
 @Getter
 @Component
 @AllArgsConstructor
-public class OrderStorage {
+public class OrderStorage implements CustomerStorage, RestaurantStorage {
 
     private final Map<UUID, Order> ordersStorage;
 
@@ -27,3 +29,4 @@ public class OrderStorage {
     }
 
 }
+
