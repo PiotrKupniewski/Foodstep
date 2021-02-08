@@ -17,15 +17,22 @@ public class OrderStorage implements CustomerStorage, RestaurantStorage {
 
     private final Map<UUID, Order> ordersStorage;
 
+    @Override
     public void removeOrderFromStorage(Order order) {
         ordersStorage.remove(order.getOrderId());
     }
 
+    @Override
     public void addNewOrderToStorage(Order order) {
         ordersStorage.values()
                 .forEach(System.out::println);
 
         ordersStorage.put(order.getOrderId(), order);
+    }
+
+    @Override
+    public Map<UUID, Order> getActiveOrders() {
+        return ordersStorage;
     }
 
 }
