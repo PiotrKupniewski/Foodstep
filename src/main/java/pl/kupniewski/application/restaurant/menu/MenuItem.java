@@ -1,4 +1,4 @@
-package pl.kupniewski.application.menu;
+package pl.kupniewski.application.restaurant.menu;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
