@@ -1,14 +1,13 @@
-package pl.kupniewski.application.deliver.api;
+package pl.kupniewski.application.restaurant;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.kupniewski.application.deliver.CompleteOrderByRestaurant;
 import pl.kupniewski.application.deliver.OrderReadyToDeliver;
-import pl.kupniewski.application.menu.Menu;
-import pl.kupniewski.application.menu.MenuCreator;
-import pl.kupniewski.application.menu.MenuItem;
+import pl.kupniewski.application.restaurant.menu.Menu;
+import pl.kupniewski.application.restaurant.menu.MenuCreator;
+import pl.kupniewski.application.restaurant.menu.MenuItem;
 import pl.kupniewski.application.order.Order;
-import pl.kupniewski.application.order.OrderStorage;
+import pl.kupniewski.application.storages.OrderStorage;
 
 import java.util.*;
 
@@ -18,7 +17,7 @@ public class RestaurantApi {
 
     private final MenuCreator menuCreator;
     private final CompleteOrderByRestaurant completedOrder;
-    private OrderStorage activeOrders;
+    private RestaurantOrdersStorage ordersStorage;
 
     public Menu createMenu(){
         List<MenuItem> items = new ArrayList<>();
@@ -26,21 +25,20 @@ public class RestaurantApi {
     }
 
     public OrderReadyToDeliver assignOrderToDeliverer(Order order) {
-        activeOrders.removeOrderFromStorage(order);
+        ordersStorage.removeOrderFromStorage(order);
         return completedOrder.assignOrderToDeliverer(order);
     }
 
     public OrderStorage createOrdersStorage(){
-        if(activeOrders != null && activeOrders.getOrdersStorage().size()==0) {
-            this.activeOrders = new OrderStorage(new HashMap<>());
+        if(ordersStorage != null && ordersStorage.getRestaurantOrders().size()==0) {
+            this.ordersStorage = new OrderStorage(new HashMap<>());
         }
-        return activeOrders;
+        return new OrderStorage(ordersStorage.getRestaurantOrders());
     }
 
     public Map<UUID, Order> getActiveOrders(){
-        return activeOrders.getOrdersStorage();
+        return ordersStorage.getRestaurantOrders();
     }
-
 
 
 }
